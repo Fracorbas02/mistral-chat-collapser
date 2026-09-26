@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Mistral Collapser — Options</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 28rem;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      color: #242424;
+    }
+    fieldset {
+      border: 1px solid #d0d0d4;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      display: grid;
+      gap: 1rem;
+    }
+    label { display: flex; align-items: center; gap: 0.6rem; }
+    input[type="number"] { width: 5rem; }
+    .hint { font-size: 0.8rem; opacity: 0.7; margin-top: -0.5rem; }
+    button {
+      padding: 0.35rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #d0d0d4;
+      background: #f7f7f8;
+      cursor: pointer;
+    }
+    button:hover { background: #efeff1; }
+    #status { margin-left: 0.75rem; color: #0a7d33; }
+    @media (prefers-color-scheme: dark) {
+      body { color: #f0f0f2; background: #1c1c1f; }
+      fieldset { border-color: #4a4a50; }
+      button { background: #2c2c30; border-color: #4a4a50; color: inherit; }
+      button:hover { background: #38383d; }
+      #status { color: #5ecb7a; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Mistral Collapser</h1>
+  <form id="options">
+    <fieldset>
+      <label>
+        <input type="checkbox" id="enabled">
+        Activer le repli des messages longs
+      </label>
+
+      <label>
+        Hauteur maximale avant repli :
+        <input type="number" id="maxHeight" min="80" max="3000" step="10">
+        px
+      </label>
+      <p class="hint">
+        Un message plus haut que cette limite est replié avec un bouton
+        « Afficher plus ». Défaut : 300 px.
+      </p>
+
+      <label>
+        <input type="checkbox" id="collapseAssistant">
+        Appliquer aussi aux réponses de l'assistant
+      </label>
+
+      <div>
+        <button type="submit">Enregistrer</button>
+        <span id="status"></span>
+      </div>
+    </fieldset>
+  </form>
+  <script src="options.js"></script>
+</body>
+</html>

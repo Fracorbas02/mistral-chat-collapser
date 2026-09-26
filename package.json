@@ -1,0 +1,14 @@
+{
+  "name": "mistral-chat-collapser",
+  "version": "1.0.0",
+  "description": "Extension Firefox/Zen : replie les messages trop longs de chat.mistral.ai derrière un bouton Afficher plus.",
+  "scripts": {
+    "lint": "web-ext lint",
+    "build": "web-ext build --ignore-files README.md package.json package-lock.json .gitignore web-ext-artifacts",
+    "sign": "web-ext sign"
+  },
+  "private": true,
+  "devDependencies": {
+    "web-ext": "^10.7.0"
+  }
+}
