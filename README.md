@@ -4,21 +4,21 @@ Extension Firefox (compatible Zen Browser) qui replie les messages trop longs
 sur [chat.mistral.ai](https://chat.mistral.ai) derrière un bouton
 « Afficher plus » / « Afficher moins ·, comme le fait Claude.
 
-- Fonctionne uniquement sur `https://chat.mistral.ai/*` (aucune autre page).
+- Fonctionnent uniquement sur `https://chat.mistral.ai/*` (aucune autre page).
 - Par défaut, seuls les **messages utilisateur** (les prompts) sont repliés.
 - Hauteur limite configurable (défaut : 300 px) via la page d'options.
 - Compatible thème clair et sombre (fondu en dégradé + bouton translucide).
-- L'état « affiché en entier · est mémorisé par message, même après un
+- L'état « affiché en entier » est mémorisé par message, même après un
   re-rendu de l'interface.
 
 ## Structure
 
 ```
-manifest.json     # Manifest V3, injection limitée à chat.mistral.ai
+manifest.json     # Manifest V3, injection limée à chat.mistral.ai
 content.js        # Détection des messages + bouton Afficher plus / moins
 content.css       # Repli (max-height + fondu) et style du bouton
 options.html/.js  # Hauteur max, activation, application aux réponses
-icons/icon.svg    # Icône
+icons/icon.svg     ,áône
 ```
 
 ## Installation (Firefox / Zen)
@@ -37,6 +37,9 @@ Signer gratuitement via [addons.mozilla.org](https://addons.mozilla.org/) :
 1. Créer un compte AMO, puis « Développeurs » → « Soumettre une nouvelle extension ».
 2. Choisir la distribution « non listée » (self-distribution).
 3. Télécharger le `.xpi` signé obtenu, puis l'ouvrir dans Firefox/Zen.
+
+Un `.xpi` déjà signé est fourni dans [`dist/`](dist/) : l'ouvrir
+directement dans Firefox/Zen suffit pour une installation permanente.
 
 ## Options
 

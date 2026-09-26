@@ -4,3 +4,4 @@ web-ext-artifacts/
 *.xpi
 .DS_Store
 package-lock.json
+!dist/*.xpi
