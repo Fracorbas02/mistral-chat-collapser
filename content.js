@@ -1,5 +1,5 @@
 /*
- * Replie les messages trop longs sur chat.mistral.ai derrhère un bouton
+ * Replie les messages trop longs sur chat.mistral.ai derrière un bouton
  * « Afficher plus » / « Afficher moins ».
  *
  * Sélecteurs DOM (Le Chat, sept. 2026) :
@@ -47,7 +47,7 @@
       const stored = await api.storage.local.get(DEFAULT_SETTINGS);
       settings = { ...DEFAULT_SETTINGS, ...stored };
     } catch (e) {
-      // stockage inisponible (ex. chargement sans permission) : on garde les défauts
+      // stockage indisponible (ex. chargement sans permission) : on garde les défauts
     }
     applyMaxHeightVar();
     scheduleScan();
@@ -129,7 +129,7 @@
     }
 
     const id = container.getAttribute('data-message-id');
-    // scrollHeight renvoie la hauteur compléte du contenu, même sous max-height
+    // scrollHeight renvoie la hauteur complète du contenu, même sous max-height
     const isTooTall = contentEl.scrollHeight > settings.maxHeight + HYSTERESIS_PX;
 
     if (!isTooTall) {
@@ -137,7 +137,7 @@
       return;
     }
     if (id && expandedIds.has(id)) {
-      // l'utilisateur a déjà ouvert ce message : on le laisse dépljé
+      // l'utilisateur a déjà ouvert ce message : on le laisse déplié
       contentEl.classList.remove(CLASS_CLAMPED);
       return;
     }
@@ -157,7 +157,7 @@
       if (document.querySelectorAll(MESSAGE_SELECTOR_ALL).length === 0) {
         console.warn(
           '[MistralCollapser] Aucun message détecté. Le DOM de chat.mistral.ai ' +
-            'a peut-mêtre changé : mettez à jour les sélecteurs dans content.js.'
+            'a peut-être changé : mettez à jour les sélecteurs dans content.js.'
         );
       }
     }, 15000);

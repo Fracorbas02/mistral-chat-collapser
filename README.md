@@ -2,9 +2,9 @@
 
 Extension Firefox (compatible Zen Browser) qui replie les messages trop longs
 sur [chat.mistral.ai](https://chat.mistral.ai) derrière un bouton
-« Afficher plus » / « Afficher moins ·, comme le fait Claude.
+« Afficher plus » / « Afficher moins », comme le fait Claude.
 
-- Fonctionnent uniquement sur `https://chat.mistral.ai/*` (aucune autre page).
+- Fonctionne uniquement sur `https://chat.mistral.ai/*` (aucune autre page).
 - Par défaut, seuls les **messages utilisateur** (les prompts) sont repliés.
 - Hauteur limite configurable (défaut : 300 px) via la page d'options.
 - Compatible thème clair et sombre (fondu en dégradé + bouton translucide).
@@ -14,11 +14,11 @@ sur [chat.mistral.ai](https://chat.mistral.ai) derrière un bouton
 ## Structure
 
 ```
-manifest.json     # Manifest V3, injection limée à chat.mistral.ai
+manifest.json     # Manifest V3, injection limitée à chat.mistral.ai
 content.js        # Détection des messages + bouton Afficher plus / moins
 content.css       # Repli (max-height + fondu) et style du bouton
 options.html/.js  # Hauteur max, activation, application aux réponses
-icons/icon.svg     ,áône
+icons/icon.svg    # Icône
 ```
 
 ## Installation (Firefox / Zen)
@@ -81,7 +81,7 @@ pour installation permanente. Chaque signature exige d'incrémenter
 L'extension s'appuie sur :
 
 - conteneurs de message : `[data-message-author-role]` (+ `data-message-id`)
-- content du message : `.select-text`
+- contenu du message : `.select-text`
 
 En cas de changement de l'UI (l'extension ne replie plus rien), ajuster
 `MESSAGE_SELECTOR_*` et `CONTENT_SELECTOR` en tête de `content.js`.
